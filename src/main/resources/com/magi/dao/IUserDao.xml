@@ -4,4 +4,7 @@
     <select id="findAll" resultType="com.magi.User">
         select * from user
     </select>
+    <select id="find" resultType="com.magi.User">
+        select * from user where username = #{name} and sex = #{sex}
+    </select>
 </mapper>

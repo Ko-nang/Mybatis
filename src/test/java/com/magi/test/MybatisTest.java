@@ -29,8 +29,9 @@ public class MybatisTest {
        //4.使用SqlSession创建Dao接口的代理对象
        IUserDao userDao = session.getMapper(IUserDao.class);
        //5.使用代理对象执行方法
-       List<User> users = userDao.findAll();
-       System.out.println(users);
+//       List<User> users = userDao.findAll();
+        User user = userDao.find("张三","男");
+       System.out.println(user);
        //6.释放资源
        session.close();
        in.close();

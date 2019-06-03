@@ -1,6 +1,7 @@
 package com.magi.dao;
 
 import com.magi.User;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -12,8 +13,11 @@ import java.util.List;
 public interface IUserDao {
     /**
      * 返回通过sql语句查询的user结果
+     *
      * @return 返回查询的所有结果集list
      */
-    @Select("select * from user")
+//    @Select("select * from user")
     List<User> findAll();
+
+    User find(@Param("name") String name, @Param("sex") String sex);
 }
